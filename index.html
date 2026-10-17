@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pose Match Challenge</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🖐️ Pose Match Challenge</h1>
+
+  <div class="stage">
+    <video id="video" playsinline muted></video>
+    <canvas id="canvas" width="640" height="480"></canvas>
+
+    <!-- Top bar -->
+    <div class="hud">
+      <div>Score: <span id="score">0</span></div>
+      <div>Time: <span id="time">60</span></div>
+      <div>Streak: <span id="streak">0</span></div>
+      <div>Best: <span id="best">0</span></div>
+    </div>
+
+    <!-- Target pose -->
+    <div class="target" id="targetBox">
+      <small>MAKE THIS SIGN</small>
+      <h2 id="targetName">-</h2>
+      <div class="fingers" id="fingers"></div>
+      <div class="bar"><div id="roundBar"></div></div>
+      <div class="bar hold"><div id="holdBar"></div></div>
+    </div>
+
+    <div class="message" id="message"></div>
+    <div class="you" id="you">You: -</div>
+
+    <!-- Start / Game over screen -->
+    <div class="overlay" id="overlay">
+      <h2 id="overlayTitle">Ready?</h2>
+      <p id="overlayText">Copy the hand sign shown on screen.<br />Hold it steady to score. Faster = more points!</p>
+      <button id="startBtn">Start Game</button>
+    </div>
+  </div>
+
+  <!-- MediaPipe Hands (loaded from CDN, internet needed) -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
